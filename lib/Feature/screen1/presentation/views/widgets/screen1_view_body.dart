@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pinkfox/core/utils/assets_data.dart';
@@ -12,8 +13,9 @@ class Screen1ViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        Container(
           height: 350,
+          // 
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

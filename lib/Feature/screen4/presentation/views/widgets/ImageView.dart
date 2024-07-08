@@ -4,9 +4,10 @@ import 'package:pinkfox/Feature/screen3/presentation/views/screen3_view.dart';
 import 'package:pinkfox/core/utils/components.dart';
 
 class ImageViewer extends StatefulWidget {
-  final File imageFile;
+  final File? imageFile;
+  final String? image;
 
-  const ImageViewer({super.key, required this.imageFile});
+  const ImageViewer({super.key, this.image, this.imageFile});
 
   @override
   _ImageViewerState createState() => _ImageViewerState();
@@ -28,7 +29,7 @@ class _ImageViewerState extends State<ImageViewer> {
             padding: const EdgeInsets.symmetric(horizontal: 6),
             child: IconButton(
                 onPressed: () {
-                  navigatorPush(context, const Screen3View());
+                  navigatorPush(context, Screen3View(image: widget.image,imageFile: widget.imageFile,));
                 },
                 icon: const Icon(
                   Icons.check,
@@ -62,10 +63,15 @@ class _ImageViewerState extends State<ImageViewer> {
                   transform: Matrix4.identity()
                     ..translate(_offset.dx, _offset.dy)
                     ..scale(_scale),
-                  child: Image.file(
-                    widget.imageFile,
-                    fit: BoxFit.contain,
-                  ),
+                  child: widget.imageFile == null
+                      ? Image.asset(
+                          widget.image!,
+                          fit: BoxFit.contain,
+                        )
+                      : Image.file(
+                          widget.imageFile!,
+                          fit: BoxFit.contain,
+                        ),
                 ),
               ),
             ],

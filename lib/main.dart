@@ -12,10 +12,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    // Size Config   بستخدمه عشان اعرف مساحه ال الموبايل باستخدام ال ميديا كويري 
     SizeConfig().init(context);
     return MaterialApp(
       title: 'PinkFox',
-      theme: ThemeData(),
+      // theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       home: const Screen1View(),
     );

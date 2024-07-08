@@ -12,8 +12,10 @@ class Screen1View extends StatefulWidget {
 }
 
 class _Screen1ViewState extends State<Screen1View> {
+    //اول حاجه بتتنفد 
+
   @override
-  void initState() {
+  void initState()  {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {

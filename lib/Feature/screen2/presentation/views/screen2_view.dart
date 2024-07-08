@@ -6,7 +6,6 @@ class Screen2View extends StatelessWidget {
   const Screen2View({super.key});
 
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsData.kbackColor,
